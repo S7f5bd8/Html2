@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stardew Valley</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #99d8d0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #FFFFFF;
+      font-size: 40px;
+      margin: 0;
+      text-align: center;
+      text-shadow: 2px 2px 0px #3c7a6b;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    nav a {
+      text-align: center;
+      color: #FFFFFF;
+      font-size: 20px;
+      text-decoration: none;
+      text-shadow: 1px 1px 0px #3c7a6b;
+    }
+
+    nav a:hover {
+      text-align: center;
+      color: #3c7a6b;
+    }
+
+    main {
+      text-align: center;
+      background-color: #FFFFFF;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #3c7a6b;
+      font-size: 30px;
+      margin: 0 0 10px 0;
+    }
+
+    p {
+      text-align: center;
+      color: #808080;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #99d8d0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      text-align: center;
+      color: #FFFFFF;
+      font-size: 14px;
+      margin: 0;
+    }
+    article {
+      text-align: center;
+      border-bottom: 1px solid #99d8d0;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+    html, body {
+  font-family: Raleway, sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.search-box {
+  font-size: 20px;
+  border: solid 0.3em #000000;
+  display: inline-block;
+  position: relative;
+  border-radius: 2.5em;
+}
+.search-box input[type=text] {
+  font-family: inherit;
+  font-weight: bold;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.3em 2.1em 0.3em 0.4em;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2.5em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+}
+.search-box input[type=text]:focus {
+  outline: none;
+}
+.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
+  width: 18em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.search-box input[type=text]:focus + button[type=reset], .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
+  transform: rotate(-45deg) translateY(0);
+  transition: transform 150ms ease-out 800ms;
+}
+.search-box input[type=text]:focus + button[type=reset]:after, .search-box input[type=text]:not(:placeholder-shown) + button[type=reset]:after {
+  opacity: 1;
+  transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms, opacity 150ms ease 950ms;
+}
+.search-box button[type=reset] {
+  background-color: transparent;
+  width: 1.4em;
+  height: 1.4em;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.55em;
+  right: 0.55em;
+  transform: rotate(-45deg) translateY(2.2em);
+  transition: transform 150ms ease-out 150ms;
+}
+.search-box button[type=reset]:before, .search-box button[type=reset]:after {
+  content: "";
+  background-color: #000000;
+  width: 0.3em;
+  height: 1.4em;
+  position: absolute;
+}
+.search-box button[type=reset]:after {
+  transform: rotate(90deg);
+  opacity: 0;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+  </style> 
+</head>
+<body>
+  <header>
+    <h1>Stardew Valley</h1>
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Story.html">Story</a></li>
+            <li><a href="GamePlay.html">Gameplay</a></li>
+            <li><a href="Characters.html">Characters</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="survey.html">Survey</a></li>
+            <form class="search-box">
+              <input type="text" placeholder=" "/>
+              <button type="reset"></button>
+            </form>
+            <!-- partial -->
+              <script  src="./script.js"></script>
+          </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Stroy</h2>
+    <p>대기업 조자 그룹에 근무하던 평범한 사원으로 기계처럼 일하는 삶에 염증을 느끼던 찰나</p>
+    <p>할아버지가 남긴 편지를 꺼내 읽고서 물 좋고 공기 좋은 남쪽 계곡, 스타듀 밸리로 이사를 온다.</p>
+    <p>처음 농장에 도착했을 때에는 관리가 전혀 안 된 모습을 보고 경악하나,</p>
+    <p>할아버지가 생전 농사짓던 땅이기도 하고,</p>
+    <p>사랑하는 손주인 주인공에게 삶의 전환점을 선물하기 위해 물려 준 할아버지를 생각하며</p>
+    <p>이내 농장일에 적응해 가며 마을에 일원으로 녹아든다.</p>
+    <article></article>
+    <img src="images/조자.jpg" alt="">
+    <article></article>
+    <img src="images/할아버지.jpg" alt="">
+    <article></article>
+    <img src="images/편지.jpg" alt="">
+    <article></article>
+    <img src="images/로빈처음.jpg" alt="">
+    <article></article>
+    <img src="images/농장.jpg" alt="">
+    

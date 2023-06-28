@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Stardew Valley Recommendation</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #99d8d0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #FFFFFF;
+            font-size: 40px;
+            margin: 0;
+            text-align: center;
+            text-shadow: 2px 2px 0px #3c7a6b;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        nav li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        nav a {
+            color: #FFFFFF;
+            font-size: 20px;
+            text-decoration: none;
+            text-shadow: 1px 1px 0px #3c7a6b;
+        }
+        
+        nav a:hover {
+            color: #3c7a6b;
+        }
+        
+        main {
+            background-color: #FFFFFF;
+            margin: 20px;
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #3c7a6b;
+            font-size: 30px;
+            margin: 0 0 10px 0;
+        }
+        
+        p {
+            color: #808080;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        footer {
+            background-color: #99d8d0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        footer p {
+            color: #FFFFFF;
+            font-size: 14px;
+            margin: 0;
+        }
+        article {
+            border-bottom: 1px solid #99d8d0;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        html, body {
+  font-family: Raleway, sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.search-box {
+  font-size: 20px;
+  border: solid 0.3em #000000;
+  display: inline-block;
+  position: relative;
+  border-radius: 2.5em;
+}
+.search-box input[type=text] {
+  font-family: inherit;
+  font-weight: bold;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.3em 2.1em 0.3em 0.4em;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2.5em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+}
+.search-box input[type=text]:focus {
+  outline: none;
+}
+.search-box input[type=text]:focus, .search-box input[type=text]:not(:placeholder-shown) {
+  width: 18em;
+  transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.search-box input[type=text]:focus + button[type=reset], .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
+  transform: rotate(-45deg) translateY(0);
+  transition: transform 150ms ease-out 800ms;
+}
+.search-box input[type=text]:focus + button[type=reset]:after, .search-box input[type=text]:not(:placeholder-shown) + button[type=reset]:after {
+  opacity: 1;
+  transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms, opacity 150ms ease 950ms;
+}
+.search-box button[type=reset] {
+  background-color: transparent;
+  width: 1.4em;
+  height: 1.4em;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.55em;
+  right: 0.55em;
+  transform: rotate(-45deg) translateY(2.2em);
+  transition: transform 150ms ease-out 150ms;
+}
+.search-box button[type=reset]:before, .search-box button[type=reset]:after {
+  content: "";
+  background-color: #000000;
+  width: 0.3em;
+  height: 1.4em;
+  position: absolute;
+}
+.search-box button[type=reset]:after {
+  transform: rotate(90deg);
+  opacity: 0;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#survey").submit(function(event) {
+                event.preventDefault();
+
+                const gender = $('input[name="gender"]:checked').val();
+                const personality = $('select[name="personality"]').val();
+                const gameplay = $('select[name="gameplay"]').val();
+
+                // 캐릭터 추천 알고리즘 및 결과 표시
+                let recommendedCharacter = "";
+                let recommendedGameplay = "";
+                if (personality === "A" && gameplay === "1") {
+                    recommendedCharacter = "에비게일";
+                    recommendedGameplay = "동굴 탐험과 사막 탐험";
+                } else if (personality === "A" && gameplay === "2") {
+                    recommendedCharacter = "로빈";
+                    recommendedGameplay = "마을회관 번들과 고대 과일 얻기";
+                } else if (personality === "A" && gameplay === "3") {
+                    recommendedCharacter = "페니, 마법사";
+                    recommendedGameplay = "결혼 이벤트";
+                } else if (personality === "B" && gameplay === "1") {
+                    recommendedCharacter = "세바스찬";
+                    recommendedGameplay = "여러 곳의 특별한 낚시 포인트";
+                } else if (personality === "B" && gameplay === "2") {
+                    recommendedCharacter = "레아";
+                    recommendedGameplay = "산에 열차, 봄에 파 이벤트";
+                } else if (personality === "B" && gameplay === "3") {
+                    recommendedCharacter = "알렉스";
+                    recommendedGameplay = "해변 이벤트, 주점";
+                } else if (personality === "C" && gameplay === "1") {
+                    recommendedCharacter = "크로버스";
+                    recommendedGameplay = "지하 상점 이벤트, 특별 결혼 이벤트";
+                } else if (personality === "C" && gameplay === "2") {
+                    recommendedCharacter = "피에르";
+                    recommendedGameplay = "마을 상점, 조자 마트 이벤트";
+                } else if (personality === "C" && gameplay === "3") {
+                    recommendedCharacter = "헤일리";
+                    recommendedGameplay = "여름 아이스크림 이벤트, 문어발 이벤트";
+                }
+
+                $("#character").text(recommendedCharacter);
+                $("#method").text(recommendedGameplay);
+
+                // 결과 표시
+                $("#result").show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Stardew Valley</h1>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Story.html">Story</a></li>
+                <li><a href="GamePlay.html">Gameplay</a></li>
+                <li><a href="Characters.html">Characters</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="survey.html">Survey</a></li>
+                <form class="search-box">
+                    <input type="text" placeholder=" "/>
+                    <button type="reset"></button>
+                  </form>
+                  <!-- partial -->
+                    <script  src="./script.js"></script>
+            </ul>
+        </nav>
+    </header>
+    <h1>스타듀밸리 캐릭터와 게임 이벤트 추천</h1>
+    <form id="survey">
+        <p>1. 성별 : 
+            <input type="radio" name="gender" value="M" required> 남성
+            <input type="radio" name="gender" value="F"> 여성
+            
+        </p>
+        <p>2. 원하는 캐릭터 성격 :
+            <select name="personality" required>
+                <option value="">선택하세요</option>
+                <option value="A">친절한</option>
+                <option value="B">무난한</option>
+                <option value="C">까칠한</option>
+            </select>
+        </p>
+        <p>3. 게임 플레이 성격 :
+            <select name="gameplay" required>
+                <option value="">선택하세요</option>
+                <option value="1">탐험 주의적</option>
+                <option value="2">농사 주의적</option>
+                <option value="3">상호작용 주의적</option>
+            </select>
+        </p>
+        <input type="submit" value="결과보기">
+    </form>
+
+    <div id="result" style="display: none;">
+        <h2>추천 캐릭터와 게임 이벤트:</h2>
+        <p id="character"></p>
+        <p id="method"></p>
+    </div>
+</body>
+</html>
